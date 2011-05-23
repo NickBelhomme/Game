@@ -3,7 +3,10 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 session_start();
 
-require_once '../Application/autoLoad.php';
+require_once '../Application/AutoLoader.php';
+$autoLoader = new AutoLoader(realpath(__DIR__.'/../'));
+$autoLoader->registerNamespaces();
+
 if (! \Game\Registry::load()) {
     \Game\Registry::set('personalInventory',  new \Game\Inventory());
     $grid = new \Game\Grid(2, 2);
