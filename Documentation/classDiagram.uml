@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_66s9Ud5YEd6Kk_1z8VpRMQ" name="UML2">
+  <elementImport xmi:id="_69QiEN5YEd6Kk_1z8VpRMQ">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_69aTEN5YEd6Kk_1z8VpRMQ">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_69aTEd5YEd6Kk_1z8VpRMQ">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+  </elementImport>
+  <elementImport xmi:id="_69aTEt5YEd6Kk_1z8VpRMQ">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+  </elementImport>
+  <elementImport xmi:id="_AWU4gN5ZEd6Kk_1z8VpRMQ"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_gTBpMN5aEd6Kk_1z8VpRMQ" name="Game_Tile">
+    <ownedAttribute xmi:id="_je-n0N5aEd6Kk_1z8VpRMQ" name="_description" visibility="protected" aggregation="composite"/>
+    <ownedAttribute xmi:id="_muDy8N5aEd6Kk_1z8VpRMQ" name="_inventory" visibility="protected" aggregation="composite"/>
+    <ownedAttribute xmi:id="_oBi0EN5aEd6Kk_1z8VpRMQ" name="_actions" visibility="protected" aggregation="composite"/>
+    <ownedAttribute xmi:id="_oJvt0N5aEd6Kk_1z8VpRMQ" name="_northBlocked" visibility="protected" aggregation="composite"/>
+    <ownedAttribute xmi:id="_oNBrUN5aEd6Kk_1z8VpRMQ" name="_eastBlocked" visibility="protected" aggregation="composite"/>
+    <ownedAttribute xmi:id="_oOqqEN5aEd6Kk_1z8VpRMQ" name="_southBlocked" visibility="protected" aggregation="composite"/>
+    <ownedAttribute xmi:id="_oQTo0N5aEd6Kk_1z8VpRMQ" name="_westBlocked" visibility="protected" aggregation="composite"/>
+    <ownedOperation xmi:id="_tdgtgN5aEd6Kk_1z8VpRMQ" name="__construct">
+      <ownedParameter xmi:id="_zkkLUN5aEd6Kk_1z8VpRMQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_0s33MN5aEd6Kk_1z8VpRMQ" name="getDescription">
+      <ownedParameter xmi:id="_2duw0N5aEd6Kk_1z8VpRMQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_0uXE8N5aEd6Kk_1z8VpRMQ" name="getInventory">
+      <ownedParameter xmi:id="_4VmRYN5aEd6Kk_1z8VpRMQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_0wADsN5aEd6Kk_1z8VpRMQ" name="addAction">
+      <ownedParameter xmi:id="_NCfXMN5bEd6Kk_1z8VpRMQ" name="Game_Action"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_0xpCcN5aEd6Kk_1z8VpRMQ" name="getActions">
+      <ownedParameter xmi:id="_7Gj9IN5aEd6Kk_1z8VpRMQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_0zbyMN5aEd6Kk_1z8VpRMQ" name="setNorthBlocked">
+      <ownedParameter xmi:id="_VYOTEN5bEd6Kk_1z8VpRMQ" name="bool">
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_VYOTEd5bEd6Kk_1z8VpRMQ"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_1A2jIN5aEd6Kk_1z8VpRMQ" name="setEastBlocked">
+      <ownedParameter xmi:id="_W1OckN5bEd6Kk_1z8VpRMQ" name="bool">
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_W1Ockd5bEd6Kk_1z8VpRMQ"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_1CVw4N5aEd6Kk_1z8VpRMQ" name="setSouthBlocked">
+      <ownedParameter xmi:id="_YQcdYN5bEd6Kk_1z8VpRMQ" name="bool">
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_YQcdYd5bEd6Kk_1z8VpRMQ"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_1D0-oN5aEd6Kk_1z8VpRMQ" name="setWestBlocked">
+      <ownedParameter xmi:id="_Z0cmwN5bEd6Kk_1z8VpRMQ" name="bool">
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_Z0cmwd5bEd6Kk_1z8VpRMQ"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_1FnuYN5aEd6Kk_1z8VpRMQ" name="isNorthBlocked">
+      <ownedParameter xmi:id="_B3DZgN5bEd6Kk_1z8VpRMQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_1HZ3EN5aEd6Kk_1z8VpRMQ" name="isEastBlocked">
+      <ownedParameter xmi:id="_CteEIN5bEd6Kk_1z8VpRMQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_DxcCkN5bEd6Kk_1z8VpRMQ" name="isSouthBlocked">
+      <ownedParameter xmi:id="_E66zIN5bEd6Kk_1z8VpRMQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_D_JucN5bEd6Kk_1z8VpRMQ" name="isWestBlocked">
+      <ownedParameter xmi:id="_Fne-MN5bEd6Kk_1z8VpRMQ" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_l7obAN5bEd6Kk_1z8VpRMQ" name="Game_Item" isAbstract="true">
+    <ownedAttribute xmi:id="_o7mzIN5bEd6Kk_1z8VpRMQ" name="_name" visibility="protected" aggregation="composite"/>
+    <ownedAttribute xmi:id="_qslBgN5bEd6Kk_1z8VpRMQ" name="_description" visibility="protected" aggregation="composite"/>
+    <ownedAttribute xmi:id="_rGqVcN5bEd6Kk_1z8VpRMQ" name="_actions" visibility="protected" aggregation="composite"/>
+    <ownedAttribute xmi:id="_rMB9oN5bEd6Kk_1z8VpRMQ" name="_itemCombinations" visibility="protected" aggregation="composite"/>
+    <ownedAttribute xmi:id="_rQWc8N5bEd6Kk_1z8VpRMQ" name="_conversation" visibility="protected" aggregation="composite"/>
+    <ownedOperation xmi:id="_wudEYN5bEd6Kk_1z8VpRMQ" name="__construct">
+      <ownedParameter xmi:id="_1FlcsN5bEd6Kk_1z8VpRMQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_zbn1QN5bEd6Kk_1z8VpRMQ" name="setConversation">
+      <ownedParameter xmi:id="_32VtEN5bEd6Kk_1z8VpRMQ" direction="return"/>
+      <ownedParameter xmi:id="_32VtEd5bEd6Kk_1z8VpRMQ" name="Game_Conversation"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_zhInYN5bEd6Kk_1z8VpRMQ" name="getConversation">
+      <ownedParameter xmi:id="_4_EPsN5bEd6Kk_1z8VpRMQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_zlBB0N5bEd6Kk_1z8VpRMQ" name="addAction">
+      <ownedParameter xmi:id="_6Q4c4N5bEd6Kk_1z8VpRMQ" direction="return"/>
+      <ownedParameter xmi:id="_6Q4c4d5bEd6Kk_1z8VpRMQ" name="Game_Action"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_zoJOUN5bEd6Kk_1z8VpRMQ" name="getActions">
+      <ownedParameter xmi:id="_7gwwYN5bEd6Kk_1z8VpRMQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_zrRa0N5bEd6Kk_1z8VpRMQ" name="getName">
+      <ownedParameter xmi:id="_8N6xUN5bEd6Kk_1z8VpRMQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_zuQdYN5bEd6Kk_1z8VpRMQ" name="getDescription">
+      <ownedParameter xmi:id="_9MgggN5bEd6Kk_1z8VpRMQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_zxhz0N5bEd6Kk_1z8VpRMQ" name="addItemCombination">
+      <ownedParameter xmi:id="_DlAToN5cEd6Kk_1z8VpRMQ" direction="return"/>
+      <ownedParameter xmi:id="_DlATod5cEd6Kk_1z8VpRMQ" name="Game_ItemCombination"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_z0g2YN5bEd6Kk_1z8VpRMQ" name="getCombinations">
+      <ownedParameter xmi:id="_EypLcN5cEd6Kk_1z8VpRMQ" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="__I-XwN5cEd6Kk_1z8VpRMQ" name="Game_Action" visibility="protected" isAbstract="true">
+    <ownedAttribute xmi:id="_B11moN5dEd6Kk_1z8VpRMQ" name="_subject" visibility="protected" aggregation="composite"/>
+    <ownedAttribute xmi:id="_CmRlEN5dEd6Kk_1z8VpRMQ" name="_name" visibility="protected" aggregation="composite"/>
+    <ownedAttribute xmi:id="_CsY0IN5dEd6Kk_1z8VpRMQ" name="_synonyms" visibility="protected" aggregation="composite"/>
+    <ownedAttribute xmi:id="_CwtTcN5dEd6Kk_1z8VpRMQ" name="_grid" visibility="protected" aggregation="composite"/>
+    <ownedAttribute xmi:id="_C1UtsN5dEd6Kk_1z8VpRMQ" name="_personalInventory" visibility="protected" aggregation="composite"/>
+    <ownedOperation xmi:id="_EJhggN5dEd6Kk_1z8VpRMQ" name="__construct">
+      <ownedParameter xmi:id="_KJHEYN5dEd6Kk_1z8VpRMQ" direction="return"/>
+      <ownedParameter xmi:id="_KJHEYd5dEd6Kk_1z8VpRMQ" name="Game_Grid"/>
+      <ownedParameter xmi:id="_KJHEYt5dEd6Kk_1z8VpRMQ" name="Game_Inventory"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_ETD3AN5dEd6Kk_1z8VpRMQ" name="setSubject">
+      <ownedParameter xmi:id="_Nez04N5dEd6Kk_1z8VpRMQ" direction="return"/>
+      <ownedParameter xmi:id="_Nez04d5dEd6Kk_1z8VpRMQ" name="subject"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_EXFbYN5dEd6Kk_1z8VpRMQ" name="getName">
+      <ownedParameter xmi:id="_OPZkUN5dEd6Kk_1z8VpRMQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_Ea0E0N5dEd6Kk_1z8VpRMQ" name="getSynonyms">
+      <ownedParameter xmi:id="_PGPFsN5dEd6Kk_1z8VpRMQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_EeiuQN5dEd6Kk_1z8VpRMQ" name="setGrid">
+      <ownedParameter xmi:id="_Tl2roN5dEd6Kk_1z8VpRMQ" direction="return"/>
+      <ownedParameter xmi:id="_Tl2rod5dEd6Kk_1z8VpRMQ" name="Game_Grid">
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_Tl2rot5dEd6Kk_1z8VpRMQ"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_EijrkN5dEd6Kk_1z8VpRMQ" name="setPersonalIvnentory">
+      <ownedParameter xmi:id="_RjTlEN5dEd6Kk_1z8VpRMQ" direction="return"/>
+      <ownedParameter xmi:id="_RjTlEd5dEd6Kk_1z8VpRMQ" name="Game_Inventory"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_EnB74N5dEd6Kk_1z8VpRMQ" name="execute" isAbstract="true">
+      <ownedParameter xmi:id="_UmEygN5dEd6Kk_1z8VpRMQ" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_Y28KwN5dEd6Kk_1z8VpRMQ" name="Game_ItemCombination" visibility="protected" isAbstract="true">
+    <ownedAttribute xmi:id="_dAWQIN5dEd6Kk_1z8VpRMQ" name="_itemOne" visibility="protected" aggregation="composite"/>
+    <ownedAttribute xmi:id="_dMa9QN5dEd6Kk_1z8VpRMQ" name="_itemTwo" visibility="protected" aggregation="composite"/>
+    <ownedAttribute xmi:id="_dP_1sN5dEd6Kk_1z8VpRMQ" name="_action" visibility="protected" aggregation="composite"/>
+    <ownedOperation xmi:id="_eDQeoN5dEd6Kk_1z8VpRMQ" name="__construct">
+      <ownedParameter xmi:id="_jtF08N5dEd6Kk_1z8VpRMQ" direction="return"/>
+      <ownedParameter xmi:id="_jtF08d5dEd6Kk_1z8VpRMQ" name="Game_Item"/>
+      <ownedParameter xmi:id="_jtF08t5dEd6Kk_1z8VpRMQ" name="Game_Item"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_eIoG0N5dEd6Kk_1z8VpRMQ" name="getItemOne">
+      <ownedParameter xmi:id="_lOZ2sN5dEd6Kk_1z8VpRMQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_eNZSEN5dEd6Kk_1z8VpRMQ" name="getItemTwo">
+      <ownedParameter xmi:id="_lsp48N5dEd6Kk_1z8VpRMQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_eRkncN5dEd6Kk_1z8VpRMQ" name="isValidItem">
+      <ownedParameter xmi:id="_m5QO8N5dEd6Kk_1z8VpRMQ" direction="return"/>
+      <ownedParameter xmi:id="_m5QO8d5dEd6Kk_1z8VpRMQ" name="Game_Item"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_vT0ngN5dEd6Kk_1z8VpRMQ" name="Game_Grid">
+    <ownedAttribute xmi:id="_BuTwYN5fEd6Kk_1z8VpRMQ" name="_grid" visibility="protected" aggregation="composite"/>
+    <ownedAttribute xmi:id="_CIZEUN5fEd6Kk_1z8VpRMQ" name="_position" visibility="protected" aggregation="composite"/>
+    <ownedAttribute xmi:id="_CMQ3sN5fEd6Kk_1z8VpRMQ" name="_action" visibility="protected" aggregation="composite"/>
+    <ownedOperation xmi:id="_DeFE4N5fEd6Kk_1z8VpRMQ" name="__construct">
+      <ownedParameter xmi:id="_OM7NMN5fEd6Kk_1z8VpRMQ" direction="return"/>
+      <ownedParameter xmi:id="_OM7NMd5fEd6Kk_1z8VpRMQ" name="int">
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_OM7NMt5fEd6Kk_1z8VpRMQ"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_OM7NM95fEd6Kk_1z8VpRMQ" name="int">
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_OM7NNN5fEd6Kk_1z8VpRMQ"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_EiB1MN5fEd6Kk_1z8VpRMQ" name="getGridSize">
+      <ownedParameter xmi:id="_Q-QsYN5fEd6Kk_1z8VpRMQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_EnsYUN5fEd6Kk_1z8VpRMQ" name="addAction">
+      <ownedParameter xmi:id="_TvJfoN5fEd6Kk_1z8VpRMQ" direction="return"/>
+      <ownedParameter xmi:id="_TvJfod5fEd6Kk_1z8VpRMQ" name="Game_Action"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_EsA3oN5fEd6Kk_1z8VpRMQ" name="getActions">
+      <ownedParameter xmi:id="_U9h-UN5fEd6Kk_1z8VpRMQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_EvS1IN5fEd6Kk_1z8VpRMQ" name="addTile">
+      <ownedParameter xmi:id="_WxxjIN5fEd6Kk_1z8VpRMQ" direction="return"/>
+      <ownedParameter xmi:id="_WxxjId5fEd6Kk_1z8VpRMQ" name="Game_Tile"/>
+      <ownedParameter xmi:id="_WxxjIt5fEd6Kk_1z8VpRMQ" name="int"/>
+      <ownedParameter xmi:id="_WxxjI95fEd6Kk_1z8VpRMQ" name="int"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_EzBekN5fEd6Kk_1z8VpRMQ" name="getTile">
+      <ownedParameter xmi:id="_YUkyoN5fEd6Kk_1z8VpRMQ" direction="return"/>
+      <ownedParameter xmi:id="_YUkyod5fEd6Kk_1z8VpRMQ" name="int"/>
+      <ownedParameter xmi:id="_YUkyot5fEd6Kk_1z8VpRMQ" name="int"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_E2cmAN5fEd6Kk_1z8VpRMQ" name="getTileFromPosition">
+      <ownedParameter xmi:id="_ZiqWYN5fEd6Kk_1z8VpRMQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_E6LPcN5fEd6Kk_1z8VpRMQ" name="getPosition">
+      <ownedParameter xmi:id="_aVBncN5fEd6Kk_1z8VpRMQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_E9wH4N5fEd6Kk_1z8VpRMQ" name="setPosition">
+      <ownedParameter xmi:id="_bnIvkN5fEd6Kk_1z8VpRMQ" direction="return"/>
+      <ownedParameter xmi:id="_bnIvkd5fEd6Kk_1z8VpRMQ" name="int"/>
+      <ownedParameter xmi:id="_bnIvkt5fEd6Kk_1z8VpRMQ" name="int"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_FBCFYN5fEd6Kk_1z8VpRMQ" name="isOnGrid">
+      <ownedParameter xmi:id="_c642cN5fEd6Kk_1z8VpRMQ" direction="return"/>
+      <ownedParameter xmi:id="_c642cd5fEd6Kk_1z8VpRMQ" name="int"/>
+      <ownedParameter xmi:id="_c642ct5fEd6Kk_1z8VpRMQ" name="int"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_ghkpQN5fEd6Kk_1z8VpRMQ" name="Game_Inventory">
+    <ownedAttribute xmi:id="_h0b_UN5fEd6Kk_1z8VpRMQ" name="ITEM_INFINITE_QUANTITY" aggregation="composite"/>
+    <ownedAttribute xmi:id="_iGA3gN5fEd6Kk_1z8VpRMQ" name="_itemsWithQuantity" visibility="protected" aggregation="composite"/>
+    <ownedAttribute xmi:id="_zMlW4N5fEd6Kk_1z8VpRMQ" name="property" visibility="protected" aggregation="composite"/>
+    <ownedOperation xmi:id="_jJhi8N5fEd6Kk_1z8VpRMQ" name="addItem">
+      <ownedParameter xmi:id="_n0T3EN5fEd6Kk_1z8VpRMQ" direction="return"/>
+      <ownedParameter xmi:id="_n0T3Ed5fEd6Kk_1z8VpRMQ" name="Game_Item"/>
+      <ownedParameter xmi:id="_n0T3Et5fEd6Kk_1z8VpRMQ" name="int"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_jhEgQN5fEd6Kk_1z8VpRMQ" name="removeItem">
+      <ownedParameter xmi:id="_o2LjwN5fEd6Kk_1z8VpRMQ" direction="return"/>
+      <ownedParameter xmi:id="_o2Ljwd5fEd6Kk_1z8VpRMQ" name="Game_Item"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_jkfnsN5fEd6Kk_1z8VpRMQ" name="getItems">
+      <ownedParameter xmi:id="_picM0N5fEd6Kk_1z8VpRMQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_jn7WMN5fEd6Kk_1z8VpRMQ" name="takeItem">
+      <ownedParameter xmi:id="_qrwlUN5fEd6Kk_1z8VpRMQ" direction="return"/>
+      <ownedParameter xmi:id="_qrwlUd5fEd6Kk_1z8VpRMQ" name="Game_Item"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_jrpYkN5fEd6Kk_1z8VpRMQ" name="getItemByName">
+      <ownedParameter xmi:id="_tU5x0N5fEd6Kk_1z8VpRMQ" direction="return"/>
+      <ownedParameter xmi:id="_tU5x0d5fEd6Kk_1z8VpRMQ" name="string"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_zYNYEN5fEd6Kk_1z8VpRMQ" name="Game_Conversation">
+    <ownedAttribute xmi:id="_0j6WMN5fEd6Kk_1z8VpRMQ" name="_give" visibility="protected" aggregation="composite"/>
+    <ownedAttribute xmi:id="_0z22sN5fEd6Kk_1z8VpRMQ" name="_receive" visibility="protected" aggregation="composite"/>
+    <ownedAttribute xmi:id="_018hYN5fEd6Kk_1z8VpRMQ" name="_currentAnswerId" visibility="protected" aggregation="composite"/>
+    <ownedAttribute xmi:id="_075_cN5fEd6Kk_1z8VpRMQ" name="_selectedOptionId" visibility="protected" aggregation="composite"/>
+    <ownedOperation xmi:id="_1HFUsN5fEd6Kk_1z8VpRMQ" name="__construct">
+      <ownedParameter xmi:id="_7lW_sN5fEd6Kk_1z8VpRMQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_1TAQ0N5fEd6Kk_1z8VpRMQ" name="get">
+      <ownedParameter xmi:id="_8GJYkN5fEd6Kk_1z8VpRMQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_1du6IN5fEd6Kk_1z8VpRMQ" name="setSelectedOptionId">
+      <ownedParameter xmi:id="_9qb10N5fEd6Kk_1z8VpRMQ" direction="return"/>
+      <ownedParameter xmi:id="_9qb10d5fEd6Kk_1z8VpRMQ" name="int"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_jao5YN5lEd6Kk_1z8VpRMQ" memberEnd="_jao5Yd5lEd6Kk_1z8VpRMQ _jao5ZN5lEd6Kk_1z8VpRMQ">
+    <ownedEnd xmi:id="_jao5Yd5lEd6Kk_1z8VpRMQ" name="src" type="_gTBpMN5aEd6Kk_1z8VpRMQ" association="_jao5YN5lEd6Kk_1z8VpRMQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jao5Y95lEd6Kk_1z8VpRMQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jao5Yt5lEd6Kk_1z8VpRMQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_jao5ZN5lEd6Kk_1z8VpRMQ" name="dst" type="__I-XwN5cEd6Kk_1z8VpRMQ" association="_jao5YN5lEd6Kk_1z8VpRMQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jao5Zt5lEd6Kk_1z8VpRMQ" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_jao5Zd5lEd6Kk_1z8VpRMQ"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_qQ60sN5lEd6Kk_1z8VpRMQ" memberEnd="_qQ60sd5lEd6Kk_1z8VpRMQ _qQ60tN5lEd6Kk_1z8VpRMQ">
+    <ownedEnd xmi:id="_qQ60sd5lEd6Kk_1z8VpRMQ" name="src" type="_gTBpMN5aEd6Kk_1z8VpRMQ" association="_qQ60sN5lEd6Kk_1z8VpRMQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qQ60s95lEd6Kk_1z8VpRMQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qQ60st5lEd6Kk_1z8VpRMQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_qQ60tN5lEd6Kk_1z8VpRMQ" name="dst" type="_ghkpQN5fEd6Kk_1z8VpRMQ" association="_qQ60sN5lEd6Kk_1z8VpRMQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qQ60tt5lEd6Kk_1z8VpRMQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qQ60td5lEd6Kk_1z8VpRMQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_ySmMIN5lEd6Kk_1z8VpRMQ" memberEnd="_ySmMId5lEd6Kk_1z8VpRMQ _ySmMJN5lEd6Kk_1z8VpRMQ">
+    <ownedEnd xmi:id="_ySmMId5lEd6Kk_1z8VpRMQ" name="src" type="_ghkpQN5fEd6Kk_1z8VpRMQ" association="_ySmMIN5lEd6Kk_1z8VpRMQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ySmMI95lEd6Kk_1z8VpRMQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ySmMIt5lEd6Kk_1z8VpRMQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_ySmMJN5lEd6Kk_1z8VpRMQ" name="dst" type="_l7obAN5bEd6Kk_1z8VpRMQ" association="_ySmMIN5lEd6Kk_1z8VpRMQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ySmMJt5lEd6Kk_1z8VpRMQ" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ySmMJd5lEd6Kk_1z8VpRMQ"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_0IeIoN5lEd6Kk_1z8VpRMQ" memberEnd="_0IeIod5lEd6Kk_1z8VpRMQ _0IeIpN5lEd6Kk_1z8VpRMQ">
+    <ownedEnd xmi:id="_0IeIod5lEd6Kk_1z8VpRMQ" name="src" type="_l7obAN5bEd6Kk_1z8VpRMQ" association="_0IeIoN5lEd6Kk_1z8VpRMQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0IeIo95lEd6Kk_1z8VpRMQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0IeIot5lEd6Kk_1z8VpRMQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_0IeIpN5lEd6Kk_1z8VpRMQ" name="dst" type="_Y28KwN5dEd6Kk_1z8VpRMQ" association="_0IeIoN5lEd6Kk_1z8VpRMQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0IeIpt5lEd6Kk_1z8VpRMQ" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0IeIpd5lEd6Kk_1z8VpRMQ"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_8-nC4N5lEd6Kk_1z8VpRMQ" memberEnd="_8-nC4d5lEd6Kk_1z8VpRMQ _8-nC5N5lEd6Kk_1z8VpRMQ">
+    <ownedEnd xmi:id="_8-nC4d5lEd6Kk_1z8VpRMQ" name="src" type="_l7obAN5bEd6Kk_1z8VpRMQ" association="_8-nC4N5lEd6Kk_1z8VpRMQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8-nC495lEd6Kk_1z8VpRMQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8-nC4t5lEd6Kk_1z8VpRMQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_8-nC5N5lEd6Kk_1z8VpRMQ" name="dst" type="_zYNYEN5fEd6Kk_1z8VpRMQ" association="_8-nC4N5lEd6Kk_1z8VpRMQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8-nC5t5lEd6Kk_1z8VpRMQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8-nC5d5lEd6Kk_1z8VpRMQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_A5Q6kN5mEd6Kk_1z8VpRMQ" memberEnd="_A5Q6kd5mEd6Kk_1z8VpRMQ _A5Q6lN5mEd6Kk_1z8VpRMQ">
+    <ownedEnd xmi:id="_A5Q6kd5mEd6Kk_1z8VpRMQ" name="src" type="_l7obAN5bEd6Kk_1z8VpRMQ" association="_A5Q6kN5mEd6Kk_1z8VpRMQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_A5Q6k95mEd6Kk_1z8VpRMQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_A5Q6kt5mEd6Kk_1z8VpRMQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_A5Q6lN5mEd6Kk_1z8VpRMQ" name="dst" type="__I-XwN5cEd6Kk_1z8VpRMQ" association="_A5Q6kN5mEd6Kk_1z8VpRMQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_A5Q6lt5mEd6Kk_1z8VpRMQ" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_A5Q6ld5mEd6Kk_1z8VpRMQ"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_VQnOMN5mEd6Kk_1z8VpRMQ" memberEnd="_VQnOMd5mEd6Kk_1z8VpRMQ _VQnONN5mEd6Kk_1z8VpRMQ">
+    <ownedEnd xmi:id="_VQnOMd5mEd6Kk_1z8VpRMQ" name="src" type="_vT0ngN5dEd6Kk_1z8VpRMQ" association="_VQnOMN5mEd6Kk_1z8VpRMQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VQnOM95mEd6Kk_1z8VpRMQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VQnOMt5mEd6Kk_1z8VpRMQ" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_Izpy4N6VEd6Kk_1z8VpRMQ" value=""/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_VQnONN5mEd6Kk_1z8VpRMQ" name="dst" type="_gTBpMN5aEd6Kk_1z8VpRMQ" association="_VQnOMN5mEd6Kk_1z8VpRMQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VQnONt5mEd6Kk_1z8VpRMQ" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VQnONd5mEd6Kk_1z8VpRMQ"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_XZQ8wN5mEd6Kk_1z8VpRMQ" memberEnd="_XZQ8wd5mEd6Kk_1z8VpRMQ _XZQ8xN5mEd6Kk_1z8VpRMQ">
+    <ownedEnd xmi:id="_XZQ8wd5mEd6Kk_1z8VpRMQ" name="src" type="_vT0ngN5dEd6Kk_1z8VpRMQ" association="_XZQ8wN5mEd6Kk_1z8VpRMQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XZQ8w95mEd6Kk_1z8VpRMQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XZQ8wt5mEd6Kk_1z8VpRMQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_XZQ8xN5mEd6Kk_1z8VpRMQ" name="dst" type="__I-XwN5cEd6Kk_1z8VpRMQ" association="_XZQ8wN5mEd6Kk_1z8VpRMQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XZQ8xt5mEd6Kk_1z8VpRMQ" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XZQ8xd5mEd6Kk_1z8VpRMQ"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Package>
