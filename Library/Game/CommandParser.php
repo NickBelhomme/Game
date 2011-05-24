@@ -1,24 +1,101 @@
 <?php
 namespace Game;
 use Game\Grid,
+    Game\Item,
     Game\Inventory;
 class CommandParser
 {
+    /**
+     * The user input
+     *
+     * @var string
+     */
     protected $input;
+
+    /**
+     *
+     * Input after Game\Actions are applied to Game\item(s)
+     * When such a thing has happened the reference to the item / action
+     * is removed from the string. Making the string ready for further parsing
+     *
+     * @var string
+     */
     protected $parsedInput;
-    protected $action;
+
+    /**
+     * the current tile on which the player is
+     *
+     * @var Game\Tile
+     */
     protected $tile;
+
+    /**
+     * The personal inventory of the player
+     *
+     * @var Game\Inventory
+     */
     protected $personalInventory;
+
+    /**
+     *
+     * The object which implements Game\Action\Action
+     *
+     * @var mixed
+     */
     protected $itemPrimary = false;
+
+    /**
+     *
+     * The primary item its inventory
+     *
+     * @var Game\Inventory
+     */
     protected $itemPrimaryInventory = false;
+
+    /**
+     *
+     * The second object which implements Game\Action\Action so it can be inspected for a potential
+     * itemcombination
+     *
+     * @var mixed
+     */
     protected $itemSecondary = false;
+
+    /**
+     *
+     * The second item its inventory
+     *
+     * @var Game\Inventory
+     */
     protected $itemSecondaryInventory = false;
+
+    /**
+     * The grid of the game
+     * @var Game\Grid
+     */
     protected $grid;
+
+    /**
+     *
+     * a itemcombination factory name taking care of creating and
+     * registering all the item combinations in the game
+     *
+     * @var string
+     */
     protected $combinationRegistryClass;
 
-    public function __construct($cmd, Grid $grid, Inventory $personalInventory)
+    /**
+     * Constructor
+     * Will setup the entire parser and run it automatically
+     *
+     * @param string $input
+     * @param Game\Grid $grid
+     * @param Game\Inventory $personalInventory
+     * @return void
+     */
+    public function __construct($input, Grid $grid, Inventory $personalInventory)
     {
-        $this->input = trim($cmd);
+        $this->input = trim($input);
         $this->parsedInput = $this->input;
         $this->personalInventory = $personalInventory;
         $this->grid = $grid;
@@ -26,6 +103,11 @@ class CommandParser
         $this->parseCommand();
     }
 
+    /**
+     * Parses the input
+     *
+     * @return mixed
+     */
     protected function parseCommand()
     {
         $completeInventoryList = $this->getItemListFromInventory($this->tile->getInventory()) + $this->getItemListFromInventory($this->personalInventory);
@@ -70,6 +152,12 @@ class CommandParser
         echo 'you cannot do that';
     }
 
+    /**
+     * Get the itemlist from the inventory while keeping an item-inventory reference
+     *
+     * @param $inventory
+     * @return array
+     */
     protected function getItemListFromInventory(Inventory $inventory)
     {
         $inventoryList = array();
@@ -80,6 +168,11 @@ class CommandParser
         return $inventoryList;
     }
 
+    /**
+     * Will extract the Game\Action from the input
+     *
+     * @return Game\Action
+     */
     protected function getAction()
     {
         if ($action = $this->getActionFromInput()) {
@@ -92,6 +185,11 @@ class CommandParser
         return $action;
     }
 
+    /**
+     * Will extract the Game\Action from the primary item using the input
+     *
+     * @return Game\Action
+     */
     protected function getActionFromInput()
     {
         if ($actions = $this->itemPrimary->getActions()) {
@@ -111,6 +209,11 @@ class CommandParser
         return false;
     }
 
+    /**
+     * Get the Game\Item from the inventory depending on the input
+     * @param Game\Inventory $itemsAvailable
+     * @return Game\Item
+     */
     protected function getItemForActionFromInventory(Inventory $itemsAvailable)
     {
         foreach ($itemsAvailable->getItems() as $item) {
@@ -121,17 +224,18 @@ class CommandParser
         return false;
     }
 
-    protected function getItemForAction($item)
+    /**
+     * Check whether an item matches a specific input
+     * @param Game\Item $item
+     *
+     * @return Game\Item
+     */
+    protected function getItemForAction(Item $item)
     {
         if (stripos($this->parsedInput, $item->getName()) !== false) {
             $this->parsedInput = str_ireplace($item->getName(), '', $this->parsedInput);
             return $item;
         }
         return false;
-    }
-
-    public function executeCommand()
-    {
-        return $this->action;
     }
 }

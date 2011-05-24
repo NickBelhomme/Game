@@ -23,7 +23,6 @@ if (!empty($_GET['cmd'])) {
         header('Location: index.php');
     }
     $commandParser = new \App\CommandParser($_GET['cmd'], \Game\Registry::get('grid'), \Game\Registry::get('personalInventory'));
-    $cmd = $commandParser->executeCommand();
 }
 
 \Game\Registry::save();
