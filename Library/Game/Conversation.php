@@ -2,26 +2,69 @@
 namespace Game;
 class Conversation
 {
+    /**
+     * Possible responses to say by the player
+     *
+     * @var array
+     */
     protected $give = array();
+
+    /**
+     * Possible responses to receive from the program
+     *
+     * @var array
+     */
     protected $receive = array();
+
+    /**
+     * the last response received from the program
+     *
+     * @var integer
+     */
     protected $currentAnswerId = 0;
+
+    /**
+     * the last responsed said by the player
+     *
+     * @var mixed integer or false when nothing is said yet
+     */
     protected $selectedOptionId = false;
 
+    /**
+     * Constructor
+     *
+     * @return void
+     */
     public function __construct()
     {
         $this->initDialog();
     }
 
+    /**
+     * Get the next complete conversation to be held.
+     * This is calculated depending on the $selectedOptionId
+     *
+     * @return array
+     */
     public function get() {
         return array('answer' => $this->getAnswer(), 'optionsNext' => $this->getNextOptions(), 'optionsPrev' => $this->getPrevOptions());
     }
 
-    public function setSelectedOptionId($int)
+    /**
+     * sets the player his response Id
+     * @param integer $optionId
+     */
+    public function setSelectedOptionId($optionId)
     {
-        $this->selectedOptionId = (int) $int;
+        $this->selectedOptionId = (int) $optionId;
         return $this;
     }
 
+    /**
+     * Get the next available options for the player to choose from
+     *
+     * @return array
+     */
     protected function getNextOptions()
     {
         $choices = array();
@@ -34,6 +77,11 @@ class Conversation
         return $choices;
     }
 
+    /**
+     * Get the previous available options for the player to choose from
+     *
+     * @return array
+     */
     protected function getPrevOptions()
     {
         if (array_key_exists($this->currentAnswerId, $this->receive)) {
@@ -49,6 +97,12 @@ class Conversation
         return false;
     }
 
+    /**
+     * Get the seemingly random answer from the computer.
+     * It is actually depending on the selectedoption from the player
+     *
+     * @return string
+     */
     protected function getAnswer()
     {
         $answers = array();
@@ -65,6 +119,11 @@ class Conversation
         return false;
     }
 
+    /**
+     * template method in which you store the entire dialog
+     *
+     * @return void
+     */
     protected function initDialog()
     {
         $this->give[0] = array('parentId' => false, 'text' => 'Never Mind');
