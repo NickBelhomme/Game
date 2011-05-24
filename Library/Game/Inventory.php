@@ -2,16 +2,40 @@
 namespace Game;
 class Inventory
 {
+    /**
+     * Some items can have an infinite supply, this const will indicate that
+     *
+     * @var integer
+     */
     const ITEM_INFINITE_QUANTITY = -1;
 
+    /**
+     * Game\Item stack with their respective quantities
+     *
+     * @var array
+     */
     protected $itemsWithQuantity = array();
 
+    /**
+     * Adds an item to the itemstack. For each item their can be only one instance
+     * with a respective quantity registered
+     *
+     * @param Game\Item $item
+     * @param integer $quantity
+     * @return Game\Inventory
+     */
     public function addItem(Item $item, $quantity = 1)
     {
         $this->itemsWithQuantity[$item->getName()] = array($item, (int) $quantity);
         return $this;
     }
 
+    /**
+     * Remove an item from the itemstack
+     *
+     * @param Game\Item $item
+     * @return boolean true on success
+     */
     public function removeItem(Item $item)
     {
         if ($this->itemExists($item)) {
@@ -21,6 +45,11 @@ class Inventory
         return false;
     }
 
+    /**
+     * Get all the items without their quantity from the itemstack
+     *
+     * @return array
+     */
     public function getItems()
     {
         $items = array();
@@ -30,6 +59,12 @@ class Inventory
         return $items;
     }
 
+    /**
+     * Decreases the item with one, you take 1 quantity from the stack
+     *
+     * @param Item $item
+     * @return boolean true on success
+     */
     public function takeItem(Item $item)
     {
         if ($this->itemExists($item)) {
@@ -42,6 +77,12 @@ class Inventory
         return false;
     }
 
+    /**
+     * Get a specific item without its quantities from the itemstack
+     *
+     * @param $name name of the item
+     * @return mixed Game\Item boolean False on not found
+     */
     public function getItemByName($name)
     {
         if (array_key_exists($name, $this->itemsWithQuantity)) {
@@ -50,6 +91,12 @@ class Inventory
         return false;
     }
 
+    /**
+     * Checks wether a specific item already is registered
+     *
+     * @param Game\Item $item
+     * @return boolean true when already in stack
+     */
     protected function itemExists(Item $item)
     {
         foreach ($this->itemsWithQuantity as $itemWithQuantity) {
@@ -60,6 +107,12 @@ class Inventory
         return false;
     }
 
+    /**
+     * decrease the item quantity with one
+     *
+     * @param Item $item
+     * @return boolean true on decrease
+     */
     protected function decreaseItemQuantity(Item $item)
     {
         if ($this->itemExists($item)) {
