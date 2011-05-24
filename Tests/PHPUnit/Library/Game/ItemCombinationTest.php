@@ -16,8 +16,6 @@ class ItemCombinationTest extends \PHPUnit_Framework_TestCase
         $itemCombination = new \Game\ItemCombination\Stub($item, $item2);
 
         // assert Setting and Getting
-        $this->assertFalse($itemCombination->isValidItem($item));
-        $this->assertTrue($itemCombination->isValidItem($item2));
         $this->assertTrue($itemCombination->getItemOne() === $item);
         $this->assertTrue($itemCombination->getItemTwo() === $item2);
     }
