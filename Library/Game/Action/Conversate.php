@@ -3,9 +3,24 @@ namespace Game\Action;
 use Game\Item;
 class Conversate extends AbstractAction
 {
+    /**
+     * name of the action, it is the id of a specific action
+     *
+     * @var string
+     */
     protected $name = 'conversate';
+
+    /**
+     * The conversation known to the subject
+     * @var Game\Conversation
+     */
     protected $conversation;
 
+    /**
+     * The commands under which the action can be found and executed
+     *
+     * @var array of regex compatible strings
+     */
     protected $synonyms = array(
         'conversate[ ]+to[ ]+',
         'speak[ ]+to[ ]+',
@@ -15,6 +30,12 @@ class Conversate extends AbstractAction
         'say[ ]\d+'
     );
 
+    /**
+     * set the subject and extracts whether it can conversate
+     *
+     * @param Game\Item $subject
+     * @return Game\Action\AbstractAction
+     */
     public function setSubject(Item $subject)
     {
         parent::setSubject($subject);
@@ -24,11 +45,21 @@ class Conversate extends AbstractAction
         }
     }
 
+    /**
+     * sets the player his response Id in the conversate object
+     * @param integer $int
+     * @return void
+     */
     public function setSelectedOptionId($int)
     {
         $this->conversation->setSelectedOptionId($int);
     }
 
+    /**
+     * try to conversate
+     * @see Game\Action.AbstractAction::execute()
+     * @return void
+     */
     public function execute()
     {
         echo 'you can talk by typing "say #dialognumber to '.$this->subject->getName().'".<br /> ';

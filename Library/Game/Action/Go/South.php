@@ -3,11 +3,27 @@ namespace Game\Action\Go;
 use Game\Action;
 class South extends Action\Go
 {
+    /**
+     * name of the action, it is the id of this specific action
+     *
+     * @var string
+     */
     protected $name = 'goSouth';
+
+    /**
+     * The commands under which the action can be found and executed
+     *
+     * @var array of regex compatible strings
+     */
     protected $synonyms = array(
         '(go|walk|run) (south|down)',
     );
 
+    /**
+     * Go south on the grid
+     * @see Game\Action.Go::go()
+     * @return boolean true on succesfull move
+     */
     protected function go()
     {
         $grid = $this->grid;
