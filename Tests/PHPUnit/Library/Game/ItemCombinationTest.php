@@ -22,7 +22,7 @@ class ItemCombinationTest extends \PHPUnit_Framework_TestCase
 
     public function testConstructorTestingOfActionProperty()
     {
-        $this->setExpectedException('\Exception');
+        $this->setExpectedException('\Game\Exception\RuntimeException' );
         $item = $this->getMock('\Game\Item', null, array(), '', false);
         $itemCombination = $this->getMockForAbstractClass('\Game\ItemCombination', array($item, $item));
 

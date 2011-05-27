@@ -40,7 +40,7 @@ class Grid implements Action
     public function __construct($gridSizeX, $gridSizeY)
     {
         if (0 >= (int) $gridSizeX || 0 >= (int) $gridSizeY) {
-          throw new \Exception('Grid size cannot be zero or negative');
+            throw new Exception\OutOfRangeException('Grid size cannot be zero or negative');
         }
 
         $this->buildGrid($gridSizeX, $gridSizeY);
@@ -166,13 +166,13 @@ class Grid implements Action
      *
      * @param integer $x
      * @param integer $y
-     * @throws \Exception
+     * @throws Game\Exception\OutOfRangeException
      * @return void
      */
     protected function ifNotOnGridThrowException($x, $y)
     {
         if (!$this->isOnGrid($x, $y)) {
-            throw new \Exception('Tile position is not valid on grid');
+            throw new Exception\OutOfRangeException('Tile position is not valid on grid');
         }
     }
 
@@ -213,32 +213,32 @@ class Grid implements Action
      * @param Game\Tile $tile
      * @param integer $x
      * @param integer $y
-     * @throws \Exception
+     * @throws Game\Exception\DomainException
      * @return boolean
      */
     protected function isTileValidOnGrid(Tile $tile, $x, $y)
     {
         if ($y == 0) {
             if (! $tile->isNorthBlocked()) {
-                throw new \Exception ('Tile placement on grid is not valid, North');
+                throw new Exception\DomainException('Tile placement on grid is not valid, North');
             }
         }
 
         if ($y == count($this->grid[0])-1) {
             if (! $tile->isSouthBlocked()) {
-                throw new \Exception ('Tile placement on grid is not valid, South');
+                throw new Exception\DomainException('Tile placement on grid is not valid, South');
             }
         }
 
         if ($x == 0) {
             if (! $tile->isWestBlocked()) {
-                throw new \Exception ('Tile placement on grid is not valid, West');
+                throw new Exception\DomainException('Tile placement on grid is not valid, West');
             }
         }
 
         if ($x == count($this->grid) - 1) {
             if (! $tile->isEastBlocked()) {
-                throw new \Exception ('Tile placement on grid is not valid, East');
+                throw new Exception\DomainException('Tile placement on grid is not valid, East');
             }
         }
         return true;

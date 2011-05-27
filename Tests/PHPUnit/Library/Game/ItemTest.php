@@ -28,7 +28,7 @@ class ItemTest extends \PHPUnit_Framework_TestCase
      */
     public function testConstructorForExceptions($name, $description)
     {
-        $this->setExpectedException('\Exception');
+        $this->setExpectedException('\Game\Exception\RuntimeException');
         $item = new Item\Stub();
         $item->setName($name);
         $item->setDescription($description);

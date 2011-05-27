@@ -32,14 +32,14 @@ abstract class ItemCombination
      *
      * @param \Game\Item $itemOne
      * @param \Game\Item $itemTwo
-     * @throws \Exception
+     * @throws \Game\Exception\RuntimeException
      * @return void
      */
     public function __construct(Item $itemOne, Item $itemTwo)
     {
         $this->init();
         if (! ($this->action instanceof AbstractAction)) {
-            throw new \Exception('subclass should set property action to a Game_Action');
+            throw new Exception\RuntimeException('subclass should set property action to a Game_Action');
         }
 
         $this->itemOne = $itemOne;

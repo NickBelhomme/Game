@@ -55,16 +55,16 @@ abstract class Item implements Action
      * Constructor
      * Checks whether the subclass has implemented all the needed dependencies
      * Calls the template method init() at the end
-     * @throws \Exception
+     * @throws \Game\Exception\RuntimeException
      */
     public function __construct()
     {
         if (is_null($this->name)) {
-            throw new \Exception('You have to specify a name in the Item subclass');
+            throw new Exception\RuntimeException('You have to specify a name in the Item subclass');
         }
 
         if (is_null($this->description)) {
-            throw new \Exception('You have to specify a description in the Item subclass');
+            throw new Exception\RuntimeException('You have to specify a description in the Item subclass');
         }
         $this->inventory = new Inventory();
         $this->init();

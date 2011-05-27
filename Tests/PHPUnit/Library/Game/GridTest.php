@@ -35,7 +35,7 @@ class GridTest extends \PHPUnit_Framework_TestCase
      */
     public function testConstructWithBadParams($x, $y)
     {
-        $this->setExpectedException('Exception');
+        $this->setExpectedException('\Game\Exception\OutOfRangeException');
         $grid = new Grid($x,$y);
     }
 
@@ -61,7 +61,7 @@ class GridTest extends \PHPUnit_Framework_TestCase
 
     public function testAddTileOutsideGrid()
     {
-        $this->setExpectedException('\Exception');
+        $this->setExpectedException('\Game\Exception\OutOfRangeException');
         $tile = $this->getMock('\Game\Tile');
         $grid = new Grid(1,1);
         $grid->addTile($tile, 2, 3);
@@ -83,7 +83,7 @@ class GridTest extends \PHPUnit_Framework_TestCase
     public function testAddTileInsideGridButWithNoBlockageWhereBlackageShouldBeSet($northBlocked, $eastBlocked, $southBlocked, $westBlocked)
     {
         $grid = new Grid(1,1);
-        $this->setExpectedException('\Exception');
+        $this->setExpectedException('\Game\Exception\DomainException');
         $tile = $this->getMock('\Game\Tile', array('isNorthBlocked', 'isEastBlocked', 'isSouthBlocked', 'isWestBlocked'));
         $tile->expects($this->any())
              ->method('isNorthBlocked')
@@ -130,7 +130,7 @@ class GridTest extends \PHPUnit_Framework_TestCase
 
     public function testSetPositionOutsideGrid()
     {
-        $this->setExpectedException('\Exception');
+        $this->setExpectedException('\Game\Exception\OutOfRangeException');
         $grid = new Grid(1,1);
         $grid->setPosition(3,2);
     }

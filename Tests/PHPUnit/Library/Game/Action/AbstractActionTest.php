@@ -42,7 +42,7 @@ class AbstractActionTest extends \PHPUnit_Framework_TestCase
 
     public function testSetItemIncorrectParam()
     {
-        $this->setExpectedException('\Exception');
+        $this->setExpectedException('\Game\Exception\InvalidArgumentException');
         $this->assertInstanceOf(__NAMESPACE__.'\AbstractAction', $this->action->setSubject('blabla'));
     }
 

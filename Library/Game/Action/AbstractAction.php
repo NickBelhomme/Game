@@ -69,7 +69,7 @@ abstract class AbstractAction
     public function setSubject($subject)
     {
         if (!($subject instanceOf Item) && !($subject instanceOf Tile) && !($subject instanceOf Grid)) {
-            throw new \Exception('subject passed should be of type Item, Tile, Grid');
+            throw new Exception\InvalidArgumentException('subject passed should be of type Item, Tile, Grid');
         }
         $this->subject = $subject;
         return $this;
