@@ -12,7 +12,7 @@ class InventoryTest extends \PHPUnit_Framework_TestCase
 
     public function testAddAndGetItem()
     {
-        $item = $this->getMock('\Game\Item\Stub', null);
+        $item = $this->getMock('Game\Item\Stub', null);
         $item->setName('a');
         $this->assertInstanceOf('\Game\Inventory', $this->inventory->addItem($item, 0));
         $this->assertEquals(1, count($this->inventory->getItems()));
@@ -25,13 +25,13 @@ class InventoryTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf('\Game\Inventory', $this->inventory->addItem($item, 1));
         $this->assertEquals(1, count($this->inventory->getItems()));
 
-        $item = $this->getMock('\Game\Item\Stub', null);
+        $item = $this->getMock('Game\Item\Stub', null);
         $item->setName('b');
         $this->inventory->addItem($item, 1);
         $this->assertEquals(2, count($this->inventory->getItems()));
         $this->assertInstanceOf('\Game\Item', $this->inventory->getItemByName('b'));
 
-        $item = $this->getMock('\Game\Item\Stub', null);
+        $item = $this->getMock('Game\Item\Stub', null);
         $item->setName('c');
         $this->inventory->addItem($item, 'aStringShouldConvertToZeroOrIntegerEquivalent');
         $this->assertEquals(3, count($this->inventory->getItems()));
@@ -44,7 +44,7 @@ class InventoryTest extends \PHPUnit_Framework_TestCase
 
     public function testRemoveItem()
     {
-        $item = $this->getMock('\Game\Item\Stub', null);
+        $item = $this->getMock('Game\Item\Stub', null);
         $item->setName('a');
         $this->inventory->addItem($item, 0);
         $this->assertEquals(1, count($this->inventory->getItems()));
@@ -55,14 +55,14 @@ class InventoryTest extends \PHPUnit_Framework_TestCase
 
     public function testTakeItem()
     {
-        $item = $this->getMock('\Game\Item\Stub', null);
+        $item = $this->getMock('Game\Item\Stub', null);
         $item->setName('a');
         $this->inventory->addItem($item, 2);
         $this->assertTrue($this->inventory->takeItem($item));
         $this->assertTrue($this->inventory->takeItem($item));
         $this->assertFalse($this->inventory->takeItem($item));
 
-        $item2 = $this->getMock('\Game\Item\Stub', null);
+        $item2 = $this->getMock('Game\Item\Stub', null);
         $item2->setName('b');
         $this->inventory->addItem($item2, 0);
         $this->assertFalse($this->inventory->takeItem($item2));

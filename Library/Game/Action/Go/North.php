@@ -1,7 +1,7 @@
 <?php
 namespace Game\Action\Go;
-use Game\Action;
-class North extends Action\Go
+
+class North extends AbstractGo
 {
     /**
      * name of the action, it is the id of this specific action

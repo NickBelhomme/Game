@@ -12,7 +12,7 @@ class ItemTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->item = $this->getMock('\Game\Item\Stub', null);
+        $this->item = $this->getMock('Game\Item\Stub', null);
     }
 
     public function constructorExceptionDataProvider()
@@ -37,7 +37,7 @@ class ItemTest extends \PHPUnit_Framework_TestCase
 
     public function testConversationSetAndGetting()
     {
-        $conversation = $this->getMock('\Game\Conversation');
+        $conversation = $this->getMock('Game\Conversation');
         $this->assertNull($this->item->getConversation());
         $this->assertInstanceOf('\Game\Item', $this->item->setConversation($conversation));
         $this->assertInstanceOf('\Game\Conversation', $this->item->getConversation());

@@ -9,8 +9,8 @@ class AbstractActionTest extends \PHPUnit_Framework_TestCase
 
     public function testConstructorWithParams()
     {
-        $grid = $this->getMock('\Game\Grid', null, array(1,1));
-        $inventory = $this->getMock('\Game\Inventory', null, array());
+        $grid = $this->getMock('Game\Grid', null, array(1,1));
+        $inventory = $this->getMock('Game\Inventory', null, array());
         $this->assertInstanceOf(__NAMESPACE__.'\AbstractAction', $this->getMockForAbstractClass(__NAMESPACE__.'\AbstractAction', array($grid, $inventory)));
         $this->assertInstanceOf(__NAMESPACE__.'\AbstractAction', $this->getMockForAbstractClass(__NAMESPACE__.'\AbstractAction', array($grid)));
         $this->assertInstanceOf(__NAMESPACE__.'\AbstractAction', $this->getMockForAbstractClass(__NAMESPACE__.'\AbstractAction', array(null, $inventory)));
@@ -34,9 +34,9 @@ class AbstractActionTest extends \PHPUnit_Framework_TestCase
         require_once TEST_PATH.'/Item/Stub.php';
         $item = new \Game\Item\Stub();
         $this->assertInstanceOf(__NAMESPACE__.'\AbstractAction', $this->action->setSubject($item));
-        $tile = $this->getMock('\Game\Tile');
+        $tile = $this->getMock('Game\Tile');
         $this->assertInstanceOf(__NAMESPACE__.'\AbstractAction', $this->action->setSubject($tile));
-        $grid = $this->getMock('\Game\Grid', null, array(1,1));
+        $grid = $this->getMock('Game\Grid', null, array(1,1));
         $this->assertInstanceOf(__NAMESPACE__.'\AbstractAction', $this->action->setSubject($grid));
     }
 
@@ -58,7 +58,7 @@ class AbstractActionTest extends \PHPUnit_Framework_TestCase
 
     public function testSetGrid()
     {
-        $grid = $this->getMock('\Game\Grid', null, array(1,1));
+        $grid = $this->getMock('Game\Grid', null, array(1,1));
         $this->assertInstanceOf(__NAMESPACE__.'\AbstractAction', $this->action->setGrid($grid));
     }
 
@@ -70,7 +70,7 @@ class AbstractActionTest extends \PHPUnit_Framework_TestCase
 
     public function testSetPersonalInventory()
     {
-        $inventory = $this->getMock('\Game\Inventory');
+        $inventory = $this->getMock('Game\Inventory');
         $this->assertInstanceOf(__NAMESPACE__.'\AbstractAction', $this->action->setPersonalInventory($inventory));
     }
 

@@ -1,6 +1,7 @@
 <?php
-namespace Game\Action;
-abstract class Go extends AbstractAction
+namespace Game\Action\Go;
+use Game\Action\AbstractAction;
+abstract class AbstractGo extends AbstractAction
 {
     /**
      * must know the grid, because it can potentially manipulate it

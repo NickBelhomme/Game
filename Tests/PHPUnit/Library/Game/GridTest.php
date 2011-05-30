@@ -53,7 +53,7 @@ class GridTest extends \PHPUnit_Framework_TestCase
 
     public function testAddTile()
     {
-        $tile = $this->getMock('\Game\Tile', null, array(), 'Mock', false);
+        $tile = $this->getMock('Game\Tile', null, array(), 'Mock', false);
         $grid = new Grid(1,1);
         $this->assertInstanceOf('\Game\Grid', $grid->addTile($tile, 0, 0));
         $this->assertInstanceOf('Mock', $grid->getTile(0,0));
@@ -62,7 +62,7 @@ class GridTest extends \PHPUnit_Framework_TestCase
     public function testAddTileOutsideGrid()
     {
         $this->setExpectedException('\Game\Exception\OutOfRangeException');
-        $tile = $this->getMock('\Game\Tile');
+        $tile = $this->getMock('Game\Tile');
         $grid = new Grid(1,1);
         $grid->addTile($tile, 2, 3);
     }
@@ -84,7 +84,7 @@ class GridTest extends \PHPUnit_Framework_TestCase
     {
         $grid = new Grid(1,1);
         $this->setExpectedException('\Game\Exception\DomainException');
-        $tile = $this->getMock('\Game\Tile', array('isNorthBlocked', 'isEastBlocked', 'isSouthBlocked', 'isWestBlocked'));
+        $tile = $this->getMock('Game\Tile', array('isNorthBlocked', 'isEastBlocked', 'isSouthBlocked', 'isWestBlocked'));
         $tile->expects($this->any())
              ->method('isNorthBlocked')
              ->will($this->returnValue($northBlocked));
@@ -138,7 +138,7 @@ class GridTest extends \PHPUnit_Framework_TestCase
     public function testAddActionAndGetActions()
     {
         require_once TEST_PATH .'/Action/Stub.php';
-        $action = $this->getMock('\Game\Action\Stub');
+        $action = $this->getMock('Game\Action\Stub');
         $action->expects($this->once())
                ->method('setGrid')
                ->with($this->isInstanceOf('\Game\Grid'));
@@ -155,7 +155,7 @@ class GridTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($initialActionsCount+1, count($actions));
 
         // Same name, it will overwrite the previous one set
-        $action2 = $this->getMock('\Game\Action\Stub');
+        $action2 = $this->getMock('Game\Action\Stub');
         $action2->expects($this->once())
                ->method('getName')
                ->will($this->returnValue('stubAction'));
