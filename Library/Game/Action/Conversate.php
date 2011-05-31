@@ -67,7 +67,6 @@ class Conversate extends AbstractAction
         if ($conversation['answer']) {
             echo $this->subject->getName(). ' says: '.$conversation['answer'].'<br />';
         }
-        var_dump($this->conversation->get());
         foreach ($conversation['optionsNext'] as $option) {
             echo $option['id']. ' => '.$option['text'].'<br />';
         }

@@ -68,12 +68,18 @@ class Conversation
     protected function getNextOptions()
     {
         $choices = array();
+        $firstOptionFound = false;
         foreach ($this->give as $id => $option) {
             if ($option['parentId'] === $this->currentAnswerId) {
+                if ($id === 0) {
+                    $firstOptionFound = true;
+                }
                 $choices[] = array('id' => $id, 'text' => $option['text']);
             }
         }
-        $choices[] = array('id' => 0, 'text' => $this->give[0]['text']);
+        if (!$firstOptionFound) {
+            $choices[] = array('id' => 0, 'text' => $this->give[0]['text']);
+        }
         return $choices;
     }
 
