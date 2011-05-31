@@ -11,6 +11,12 @@ class TileTest extends \PHPUnit_Framework_TestCase
         $this->tile = new Tile();
     }
 
+    public function testInterfaceAcceptAction()
+    {
+        $this->assertInstanceOf('\Game\Action\AcceptAction', $this->tile);
+
+    }
+
     public function testGetDescription()
     {
         $this->assertEquals('tile', $this->tile->getDescription());

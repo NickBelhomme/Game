@@ -15,6 +15,12 @@ class ItemTest extends \PHPUnit_Framework_TestCase
         $this->item = $this->getMock('Game\Item\Stub', null);
     }
 
+    public function testInterfaceAcceptAction()
+    {
+        $this->assertInstanceOf('\Game\Action\AcceptAction', $this->item);
+
+    }
+
     public function constructorExceptionDataProvider()
     {
         return array(

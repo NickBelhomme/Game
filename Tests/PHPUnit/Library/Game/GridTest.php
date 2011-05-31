@@ -3,6 +3,13 @@ namespace Game;
 use Game\Action\Go;
 class GridTest extends \PHPUnit_Framework_TestCase
 {
+    public function testInterfaceAcceptAction()
+    {
+        $grid = new Grid(1,1);
+        $this->assertInstanceOf('\Game\Action\AcceptAction', $grid);
+
+    }
+
     public function testConstructorNormalParamsWithGetGridSize()
     {
         $x = rand(1,100);
