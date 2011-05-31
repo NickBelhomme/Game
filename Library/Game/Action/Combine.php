@@ -41,7 +41,7 @@ class Combine extends AbstractAction
      * @param Game\Inventory $inventory
      * @return void
      */
-    public function __construct(ItemCombination $combination, Grid $grid = null, Inventory $inventory = null)
+    public function __construct(AbstractItemCombination $combination, Grid $grid = null, Inventory $inventory = null)
     {
         parent::__construct($grid, $inventory);
         $this->combination = $combination;

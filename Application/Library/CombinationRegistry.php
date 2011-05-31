@@ -7,7 +7,7 @@ class CombinationRegistry
     public function __construct(array $inventoryList)
     {
         $this->inventoryList = $inventoryList;
-        $this->registerCombination('\App\ItemCombination\RustyNailPrisonLock', 'nail', 'lock', 'You unlocked the door');
+        $this->registerCombination('App\ItemCombination\RustyNailPrisonLock', 'nail', 'lock', 'You unlocked the door');
     }
 
     protected function registerCombination($combination, $itemOne, $itemTwo, $message)
