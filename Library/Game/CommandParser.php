@@ -38,7 +38,7 @@ class CommandParser
 
     /**
      *
-     * The object which implements Game\Action\Action
+     * The object which implements Game\Action\AcceptAction
      *
      * @var mixed
      */
@@ -54,7 +54,7 @@ class CommandParser
 
     /**
      *
-     * The second object which implements Game\Action\Action so it can be inspected for a potential
+     * The second object which implements Game\Action\AcceptAction so it can be inspected for a potential
      * itemcombination
      *
      * @var mixed

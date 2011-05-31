@@ -3,8 +3,8 @@ namespace Game;
 use Game\Action\Go,
     Game\Action\AbstractAction,
     Game\Tile,
-    Game\Action\Action;
-class Grid implements Action
+    Game\Action\AcceptAction;
+class Grid implements AcceptAction
 {
     /**
      * The actual grid where the tiles will be stored

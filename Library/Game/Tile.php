@@ -1,10 +1,10 @@
 <?php
 namespace Game;
-use Game\Action\Action,
+use Game\Action\AcceptAction,
     Game\Action\AbstractAction,
     Game\Action\Look,
     Game\Inventory;
-class Tile implements Action
+class Tile implements AcceptAction
 {
     /**
      * Each tile has a description which will be used when the look command will be invoked
