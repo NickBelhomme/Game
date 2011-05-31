@@ -3,9 +3,10 @@ namespace Game;
 use Game\Action\AcceptAction,
     Game\Action\AbstractAction,
     Game\Conversation,
+    Game\Conversation\AcceptConversation,
     Game\AbstractItemCombination,
     Game\Inventory;
-abstract class AbstractItem implements AcceptAction
+abstract class AbstractItem implements AcceptAction, AcceptConversation
 {
     /**
      * Each item has a name which will be used
