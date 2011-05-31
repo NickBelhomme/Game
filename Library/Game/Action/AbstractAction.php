@@ -63,14 +63,11 @@ abstract class AbstractAction
     /**
      * set the subject
      *
-     * @param $subject
+     * @param Game\Action\AcceptAction $subject
      * @return Game\Action\AbstractAction
      */
-    public function setSubject($subject)
+    public function setSubject(AcceptAction $subject)
     {
-        if (!($subject instanceOf AbstractItem) && !($subject instanceOf Tile) && !($subject instanceOf Grid)) {
-            throw new Exception\InvalidArgumentException('subject passed should be of type Item, Tile, Grid');
-        }
         $this->subject = $subject;
         return $this;
     }
