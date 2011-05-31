@@ -16,7 +16,7 @@ class InventoryTest extends \PHPUnit_Framework_TestCase
         $item->setName('a');
         $this->assertInstanceOf('\Game\Inventory', $this->inventory->addItem($item, 0));
         $this->assertEquals(1, count($this->inventory->getItems()));
-        $this->assertInstanceOf('\Game\Item', $this->inventory->getItemByName('a'));
+        $this->assertInstanceOf('\Game\AbstractItem', $this->inventory->getItemByName('a'));
 
         // item with name b not yet added to the inventory
         $this->assertFalse($this->inventory->getItemByName('b'));
@@ -29,16 +29,16 @@ class InventoryTest extends \PHPUnit_Framework_TestCase
         $item->setName('b');
         $this->inventory->addItem($item, 1);
         $this->assertEquals(2, count($this->inventory->getItems()));
-        $this->assertInstanceOf('\Game\Item', $this->inventory->getItemByName('b'));
+        $this->assertInstanceOf('\Game\AbstractItem', $this->inventory->getItemByName('b'));
 
         $item = $this->getMock('Game\Item\Stub', null);
         $item->setName('c');
         $this->inventory->addItem($item, 'aStringShouldConvertToZeroOrIntegerEquivalent');
         $this->assertEquals(3, count($this->inventory->getItems()));
-        $this->assertInstanceOf('\Game\Item', $this->inventory->getItemByName('c'));
+        $this->assertInstanceOf('\Game\AbstractItem', $this->inventory->getItemByName('c'));
 
         foreach ($this->inventory->getItems() as $item) {
-            $this->assertInstanceOf('\Game\Item', $item);
+            $this->assertInstanceOf('\Game\AbstractItem', $item);
         }
     }
 

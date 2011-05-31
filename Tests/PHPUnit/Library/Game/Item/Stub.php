@@ -1,7 +1,7 @@
 <?php
 namespace Game\Item;
-use Game\Item;
-class Stub extends Item
+use Game\AbstractItem;
+class Stub extends AbstractItem
 {
     protected $name = 'test';
     protected $description = 'this is a test';

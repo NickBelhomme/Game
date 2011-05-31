@@ -1,9 +1,9 @@
 <?php
 namespace App\Item;
-use Game\Item,
+use Game\AbstractItem,
     Game\Action\Look,
     \App\Action\Take;
-class PrisonDirt extends Item
+class PrisonDirt extends AbstractItem
 {
     protected $name = 'dirt';
     protected $description = 'A rusty nail is laying in the dirt';

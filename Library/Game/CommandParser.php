@@ -1,7 +1,7 @@
 <?php
 namespace Game;
 use Game\Grid,
-    Game\Item,
+    Game\AbstractItem,
     Game\Inventory;
 class CommandParser
 {
@@ -14,7 +14,7 @@ class CommandParser
 
     /**
      *
-     * Input after Game\Actions are applied to Game\item(s)
+     * Input after Game\Actions are applied to Game\AbstractItem(s)
      * When such a thing has happened the reference to the item / action
      * is removed from the string. Making the string ready for further parsing
      *
@@ -210,9 +210,9 @@ class CommandParser
     }
 
     /**
-     * Get the Game\Item from the inventory depending on the input
+     * Get the Game\AbstractItem from the inventory depending on the input
      * @param Game\Inventory $itemsAvailable
-     * @return Game\Item
+     * @return Game\AbstractItem
      */
     protected function getItemForActionFromInventory(Inventory $itemsAvailable)
     {
@@ -226,11 +226,11 @@ class CommandParser
 
     /**
      * Check whether an item matches a specific input
-     * @param Game\Item $item
+     * @param Game\AbstractItem $item
      *
-     * @return Game\Item
+     * @return Game\AbstractItem
      */
-    protected function getItemForAction(Item $item)
+    protected function getItemForAction(AbstractItem $item)
     {
         if (stripos($this->parsedInput, $item->getName()) !== false) {
             $this->parsedInput = str_ireplace($item->getName(), '', $this->parsedInput);

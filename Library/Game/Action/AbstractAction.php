@@ -1,7 +1,7 @@
 <?php
 namespace Game\Action;
 use Game\Grid,
-    Game\Item,
+    Game\AbstractItem,
     Game\Tile,
     Game\Inventory;
 abstract class AbstractAction
@@ -10,7 +10,7 @@ abstract class AbstractAction
      *
      * The subject on which the action will apply
      *
-     * @var mixed Game\Item, Game\Tile, Game\Grid
+     * @var mixed Game\AbstractItem, Game\Tile, Game\Grid
      */
     protected $subject;
 
@@ -68,7 +68,7 @@ abstract class AbstractAction
      */
     public function setSubject($subject)
     {
-        if (!($subject instanceOf Item) && !($subject instanceOf Tile) && !($subject instanceOf Grid)) {
+        if (!($subject instanceOf AbstractItem) && !($subject instanceOf Tile) && !($subject instanceOf Grid)) {
             throw new Exception\InvalidArgumentException('subject passed should be of type Item, Tile, Grid');
         }
         $this->subject = $subject;

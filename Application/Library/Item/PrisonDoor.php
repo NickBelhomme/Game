@@ -1,11 +1,11 @@
 <?php
 namespace App\Item;
-use Game\Item,
+use Game\AbstractItem,
     Game\Action\Look,
     \App\Action\Take,
     \App\Action\Go,
     \App\Action\Open;
-class PrisonDoor extends Item
+class PrisonDoor extends AbstractItem
 {
     protected $name = 'door';
     protected $description = 'It is a rusty door made of bars. There is a lock locking the door.';

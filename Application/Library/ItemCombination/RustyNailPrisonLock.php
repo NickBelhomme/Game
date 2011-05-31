@@ -1,8 +1,8 @@
 <?php
 namespace App\ItemCombination;
-use Game\ItemCombination,
+use Game\AbstractItemCombination,
     App\Action\Combine;
-class RustyNailPrisonLock extends ItemCombination
+class RustyNailPrisonLock extends AbstractItemCombination
 {
     protected function init()
     {

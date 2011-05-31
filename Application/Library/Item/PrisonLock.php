@@ -1,8 +1,8 @@
 <?php
 namespace App\Item;
-use Game\Item,
+use Game\AbstractItem,
     Game\Action\Look;
-class PrisonLock extends Item
+class PrisonLock extends AbstractItem
 {
     protected $name = 'lock';
     protected $description = 'It is one of those old fashioned hanging locks. It looks easily picked.

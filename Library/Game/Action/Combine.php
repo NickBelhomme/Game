@@ -1,6 +1,6 @@
 <?php
 namespace Game\Action;
-use Game\ItemCombination,
+use Game\AbstractItemCombination,
     Game\Inventory,
     Game\Grid;
 class Combine extends AbstractAction
@@ -29,14 +29,14 @@ class Combine extends AbstractAction
     /**
      * an item combination on which the action should be executed
      *
-     * @var Game\ItemCombination
+     * @var Game\AbstractItemCombination
      */
     protected $combination;
 
     /**
      * Constructor
      *
-     * @param Game\ItemCombination $combination
+     * @param Game\AbstractItemCombination $combination
      * @param Game\Grid $grid
      * @param Game\Inventory $inventory
      * @return void
@@ -51,7 +51,7 @@ class Combine extends AbstractAction
     /**
      * get the item combination
      *
-     * @return Game\ItemCombination
+     * @return Game\AbstractItemCombination
      */
     public function getCombination()
     {

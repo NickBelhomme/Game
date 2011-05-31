@@ -1,11 +1,11 @@
 <?php
 namespace Game\ItemCombination;
-use Game,
-    Game\Item,
+use Game\AbstractItemCombination,
+    Game\AbstractItem,
     Game\Action;
-class Stub extends Game\ItemCombination
+class Stub extends AbstractItemCombination
 {
-    public function __construct(Item $itemOne = null, Item $itemTwo = null)
+    public function __construct(AbstractItem $itemOne = null, AbstractItem $itemTwo = null)
     {
         //supressed the original arguments
         if (!is_null($itemOne) && !is_null($itemTwo)) {

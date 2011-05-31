@@ -1,6 +1,6 @@
 <?php
 namespace Game\Action;
-use Game\Item;
+use Game\AbstractItem;
 class Conversate extends AbstractAction
 {
     /**
@@ -33,10 +33,10 @@ class Conversate extends AbstractAction
     /**
      * set the subject and extracts whether it can conversate
      *
-     * @param Game\Item $subject
+     * @param Game\AbstractItem $subject
      * @return Game\Action\AbstractAction
      */
-    public function setSubject(Item $subject)
+    public function setSubject(AbstractItem $subject)
     {
         parent::setSubject($subject);
         $this->conversation = $this->subject->getConversation();

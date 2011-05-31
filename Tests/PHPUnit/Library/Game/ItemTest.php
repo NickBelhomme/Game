@@ -1,8 +1,8 @@
 <?php
 namespace Game;
-use Game\Item,
+use Game\AbstractItem,
     Game\Action,
-    Game\ItemCombination;
+    Game\AbstractItemCombination;
 require_once TEST_PATH.'/Item/Stub.php';
 require_once TEST_PATH.'/ItemCombination/Stub.php';
 require_once TEST_PATH.'/Action/Stub.php';
@@ -39,7 +39,7 @@ class ItemTest extends \PHPUnit_Framework_TestCase
     {
         $conversation = $this->getMock('Game\Conversation');
         $this->assertNull($this->item->getConversation());
-        $this->assertInstanceOf('\Game\Item', $this->item->setConversation($conversation));
+        $this->assertInstanceOf('\Game\AbstractItem', $this->item->setConversation($conversation));
         $this->assertInstanceOf('\Game\Conversation', $this->item->getConversation());
     }
 
@@ -47,15 +47,15 @@ class ItemTest extends \PHPUnit_Framework_TestCase
     {
         $action = new Action\Stub();
         $this->assertNull($this->item->getActions());
-        $this->assertInstanceOf('\Game\Item', $this->item->addAction($action));
+        $this->assertInstanceOf('\Game\AbstractItem', $this->item->addAction($action));
         $this->assertEquals(1, count($this->item->getActions()));
 
         // because action name is the same the second time an action is added, the old gets overwritten
-        $this->assertInstanceOf('\Game\Item', $this->item->addAction($action));
+        $this->assertInstanceOf('\Game\AbstractItem', $this->item->addAction($action));
         $this->assertEquals(1, count($this->item->getActions()));
 
         $action->setName('b');
-        $this->assertInstanceOf('\Game\Item', $this->item->addAction($action));
+        $this->assertInstanceOf('\Game\AbstractItem', $this->item->addAction($action));
         $this->assertEquals(2, count($this->item->getActions()));
     }
 
@@ -74,10 +74,10 @@ class ItemTest extends \PHPUnit_Framework_TestCase
         $combination = new ItemCombination\Stub();
         $this->assertInternalType('array', $this->item->getCombinations());
         $this->assertEquals(0, count($this->item->getCombinations()));
-        $this->assertInstanceOf('\Game\Item', $this->item->addItemCombination($combination));
+        $this->assertInstanceOf('\Game\AbstractItem', $this->item->addItemCombination($combination));
         $this->assertEquals(1, count($this->item->getCombinations()));
 
-        $this->assertInstanceOf('\Game\Item', $this->item->addItemCombination($combination));
+        $this->assertInstanceOf('\Game\AbstractItem', $this->item->addItemCombination($combination));
         $this->assertEquals(2, count($this->item->getCombinations()));
     }
 }

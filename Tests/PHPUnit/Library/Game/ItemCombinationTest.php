@@ -4,13 +4,13 @@ class ItemCombinationTest extends \PHPUnit_Framework_TestCase
 {
     public function testConstructorSettingOfItemOneAndTwo()
     {
-        $item = $this->getMock('Game\Item', array('additemCombination', 'addAction'), array(), '', false);
+        $item = $this->getMock('Game\AbstractItem', array('additemCombination', 'addAction'), array(), '', false);
         $item->expects($this->once())
              ->method('additemCombination')
-             ->with($this->isInstanceOf('\Game\ItemCombination'));
+             ->with($this->isInstanceOf('\Game\AbstractItemCombination'));
         $item->expects($this->once())
              ->method('addAction');
-        $item2 = $this->getMock('Game\Item', null, array(), '', false);
+        $item2 = $this->getMock('Game\AbstractItem', null, array(), '', false);
 
         require_once TEST_PATH.'/ItemCombination/Stub.php';
         $itemCombination = new \Game\ItemCombination\Stub($item, $item2);
@@ -22,9 +22,9 @@ class ItemCombinationTest extends \PHPUnit_Framework_TestCase
 
     public function testConstructorTestingOfActionProperty()
     {
-        $this->setExpectedException('\Game\Exception\RuntimeException' );
-        $item = $this->getMock('Game\Item', null, array(), '', false);
-        $itemCombination = $this->getMockForAbstractClass('\Game\ItemCombination', array($item, $item));
+        $this->setExpectedException('Game\Exception\RuntimeException' );
+        $item = $this->getMock('Game\AbstractItem', null, array(), '', false);
+        $itemCombination = $this->getMockForAbstractClass('\Game\AbstractItemCombination', array($item, $item));
 
     }
 
