@@ -52,7 +52,7 @@ class Bootstrap
 
     protected function createResponse()
     {
-        $response = new \Game\Response();
+        $response = new \App\Response();
         return $response;
     }
 
