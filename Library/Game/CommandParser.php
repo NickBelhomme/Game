@@ -110,6 +110,10 @@ class CommandParser
      */
     protected function parseCommand()
     {
+        if (empty($this->input)) {
+            return;
+        }
+
         $completeInventoryList = $this->getItemListFromInventory($this->tile->getInventory()) + $this->getItemListFromInventory($this->personalInventory);
         ksort($completeInventoryList);
         $completeInventoryList = array_reverse($completeInventoryList);
