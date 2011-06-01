@@ -19,10 +19,6 @@ class ConversationTest extends \PHPUnit_Framework_TestCase
 
         $this->assertFalse($result['answer']);
         $this->assertFalse($result['optionsPrev']);
-
-        // should always be set
-        $this->assertequals(0, $result['optionsNext'][0]['id']);
-        $this->assertequals('Never Mind', $result['optionsNext'][0]['text']);
     }
 
     public function testSetSelectedOptionId()

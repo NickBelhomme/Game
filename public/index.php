@@ -16,13 +16,14 @@ if (! \Game\Registry::load()) {
          ->addTile(new App\Tile\PrisonOffice(), 1, 0);
 
 }
-
+$request = new \Game\Request();
 if (!empty($_GET['cmd'])) {
-    if ($_GET['cmd'] == 'reset') {
+    $request->setCmd($_GET['cmd']);
+    if ($request->getCmd() == 'reset') {
         session_destroy();
         header('Location: index.php');
     }
-    $commandParser = new \App\CommandParser($_GET['cmd'], \Game\Registry::get('grid'), \Game\Registry::get('personalInventory'));
+    $commandParser = new \App\CommandParser($request, \Game\Registry::get('grid'), \Game\Registry::get('personalInventory'));
 }
 
 \Game\Registry::save();

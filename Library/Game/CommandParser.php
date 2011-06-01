@@ -93,9 +93,9 @@ class CommandParser
      * @param Game\Inventory $personalInventory
      * @return void
      */
-    public function __construct($input, Grid $grid, Inventory $personalInventory)
+    public function __construct(Request $request, Grid $grid, Inventory $personalInventory)
     {
-        $this->input = trim($input);
+        $this->input = trim($request->getCmd());
         $this->parsedInput = $this->input;
         $this->personalInventory = $personalInventory;
         $this->grid = $grid;
