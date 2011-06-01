@@ -29,6 +29,6 @@ class Look extends AbstractAction
      */
     public function execute()
     {
-        echo $this->subject->getDescription();
+        return $this->subject->getDescription();
     }
 }

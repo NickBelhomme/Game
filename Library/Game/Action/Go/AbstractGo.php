@@ -27,9 +27,9 @@ abstract class AbstractGo extends AbstractAction
     public function execute()
     {
         if ($this->go()) {
-            echo $this->getExecutedMessageSuccess();
+            return $this->getExecutedMessageSuccess();
         } else {
-            echo $this->getExecutedMessageFailed();
+            return $this->getExecutedMessageFailed();
         }
     }
 
@@ -40,7 +40,7 @@ abstract class AbstractGo extends AbstractAction
      */
     protected function getExecutedMessageSuccess()
     {
-        echo $this->grid->getTileFromPosition()->getDescription();
+        return $this->grid->getTileFromPosition()->getDescription();
     }
 
     /**
@@ -50,7 +50,7 @@ abstract class AbstractGo extends AbstractAction
      */
     protected function getExecutedMessageFailed()
     {
-        echo 'you cannot go that way, it is blocked.';
+        return 'you cannot go that way, it is blocked.';
     }
 
     /**

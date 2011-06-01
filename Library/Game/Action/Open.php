@@ -26,6 +26,6 @@ class Open extends AbstractAction
      */
     public function execute()
     {
-        echo $this->getExecuteMessageSuccess();
+        return $this->getExecuteMessageSuccess();
     }
 }

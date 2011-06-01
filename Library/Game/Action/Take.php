@@ -30,21 +30,18 @@ class Take extends AbstractAction
         if ($this->grid->getTileFromPosition()->getInventory()->takeItem($this->subject)) {
             $this->personalInventory->addItem($this->subject, 1);
             $this->executeSuccess();
-            $this->getExecutedMessageSuccess();
-            return true;
+            return $this->getExecutedMessageSuccess();
         } else  {
             foreach ($this->grid->getTileFromPosition()->getInventory()->getItems() as $item) {
                 if ($item->getInventory()->takeItem($this->subject)) {
                       $this->personalInventory->addItem($this->subject, 1);
                    $this->executeSuccess();
-                   $this->getExecutedMessageSuccess();
-                   return true;
+                   return $this->getExecutedMessageSuccess();
                }
             }
         }
         $this->executeFailed();
-        $this->getExecutedMessageFailed();
-        return false;
+        return $this->getExecutedMessageFailed();
     }
 
     /**
@@ -54,7 +51,7 @@ class Take extends AbstractAction
      */
     protected function getExecutedMessageSuccess()
     {
-        echo $this->subject->getName().' taken';
+        return $this->subject->getName().' taken';
     }
 
     /**
@@ -64,6 +61,6 @@ class Take extends AbstractAction
      */
     protected function getExecutedMessageFailed()
     {
-        echo 'could not take '.$this->subject->getName();
+        return 'could not take '.$this->subject->getName();
     }
 }

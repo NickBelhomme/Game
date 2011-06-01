@@ -12,6 +12,6 @@ class RustyNailPrisonLock extends Combine
 
     protected function getExecutedMessageSuccess()
     {
-        echo 'you picked the lock';
+        return 'you picked the lock';
     }
 }

@@ -66,6 +66,6 @@ class Combine extends AbstractAction
     public function execute()
     {
         $this->executeSuccess();
-        $this->getExecutedMessageSuccess();
+        return $this->getExecutedMessageSuccess();
     }
 }

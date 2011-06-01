@@ -11,14 +11,14 @@ class PrisonDoor extends East
     public function execute()
     {
         if ($this->grid->getTileFromPosition()->getInventory()->getItemByName('door')->getIsClosed()) {
-            $this->getSuccessMessageFailed();
+            return $this->getSuccessMessageFailed();
         } else {
-            parent::execute();
+            return parent::execute();
         }
     }
 
     protected function getSuccessMessageFailed()
     {
-        echo 'you have to open the door first';
+        return 'you have to open the door first';
     }
 }

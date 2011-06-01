@@ -62,13 +62,14 @@ class Conversate extends AbstractAction
      */
     public function execute()
     {
-        echo 'you can talk by typing "say #dialognumber to '.$this->subject->getName().'".<br /> ';
+        $result = 'you can talk by typing "say #dialognumber to '.$this->subject->getName().PHP_EOL;
         $conversation = $this->conversation->get();
         if ($conversation['answer']) {
-            echo $this->subject->getName(). ' says: '.$conversation['answer'].'<br />';
+            $result .= $this->subject->getName(). ' says: '.$conversation['answer'].PHP_EOL;
         }
         foreach ($conversation['optionsNext'] as $option) {
-            echo $option['id']. ' => '.$option['text'].'<br />';
+            $result .= $option['id']. ' => '.$option['text'].PHP_EOL;
         }
+        return $result;
     }
 }

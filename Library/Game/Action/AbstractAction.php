@@ -129,7 +129,7 @@ abstract class AbstractAction
      */
     protected function getExecutedMessageSuccess()
     {
-        echo 'action executed';
+        return 'action executed';
     }
 
     /**
@@ -139,7 +139,7 @@ abstract class AbstractAction
      */
     protected function getExecutedMessageFailed()
     {
-        echo 'action failed';
+        return 'action failed';
     }
 
     /**

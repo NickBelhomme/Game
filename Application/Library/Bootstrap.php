@@ -5,10 +5,12 @@ class Bootstrap
     protected $container;
     protected $state;
     protected $request;
+    protected $response;
 
     public function __construct()
     {
         $this->request = $this->createRequest();
+        $this->response = $this->createResponse();
         $this->state = new \Game\State();
         if ($this->request->getCmd() == 'reset') {
             $this->state->reset();
@@ -25,7 +27,9 @@ class Bootstrap
 
     public function run()
     {
-        new CommandParser($this->request, $this->container['grid'], $this->container['personalInventory']);
+        $parser = new CommandParser($this->request, $this->response, $this->container['grid'], $this->container['personalInventory']);
+        $response = $parser->parseCommand();
+        echo str_replace(PHP_EOL, '<br />',  $response->output());
         $this->state->save($this->container);
     }
 
@@ -44,6 +48,12 @@ class Bootstrap
             $request->setCmd($_GET['cmd']);
         }
         return $request;
+    }
+
+    protected function createResponse()
+    {
+        $response = new \Game\Response();
+        return $response;
     }
 
     public function createPersonalInventory()

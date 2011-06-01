@@ -8,21 +8,21 @@ class PrisonDoor extends Open
         $tile = $this->grid->getTileFromPosition();
 
         if ($tile->getInventory()->getItemByName('door')->getIsLocked()) {
-            $this->getExecutedMessageFailed();
+            return $this->getExecutedMessageFailed();
         } else {
             $tile->setEastBlocked(false);
             $tile->getInventory()->getItemByName('door')->setIsClosed(false);
-            $this->getExecutedMessageSuccess();
+            return $this->getExecutedMessageSuccess();
         }
     }
 
     protected function getExecutedMessageSuccess()
     {
-        echo 'You opened the door';
+        return 'You opened the door';
     }
 
     protected function getExecutedMessageFailed()
     {
-        echo 'The door is locked';
+        return 'The door is locked';
     }
 }

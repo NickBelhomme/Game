@@ -5,6 +5,6 @@ class Shotgun extends Take
 {
     protected function getExecutedMessageFailed()
     {
-        echo 'You already have the shotgun. It makes you feel safe.';
+        return 'You already have the shotgun. It makes you feel safe.';
     }
 }

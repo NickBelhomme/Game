@@ -6,6 +6,13 @@ use Game\Grid,
 class CommandParser
 {
     /**
+     * The response
+     *
+     * @var Game\Response
+     */
+    protected $response;
+
+    /**
      * The user input
      *
      * @var string
@@ -93,25 +100,25 @@ class CommandParser
      * @param Game\Inventory $personalInventory
      * @return void
      */
-    public function __construct(Request $request, Grid $grid, Inventory $personalInventory)
+    public function __construct(Request $request, Response $response, Grid $grid, Inventory $personalInventory)
     {
+        $this->response = $response;
         $this->input = trim($request->getCmd());
         $this->parsedInput = $this->input;
         $this->personalInventory = $personalInventory;
         $this->grid = $grid;
         $this->tile = $grid->getTileFromPosition();
-        $this->parseCommand();
     }
 
     /**
      * Parses the input
      *
-     * @return mixed
+     * @return Game\Response
      */
-    protected function parseCommand()
+    public function parseCommand()
     {
         if (empty($this->input)) {
-            return;
+            return $this->response;
         }
 
         $completeInventoryList = $this->getItemListFromInventory($this->tile->getInventory()) + $this->getItemListFromInventory($this->personalInventory);
@@ -150,10 +157,13 @@ class CommandParser
         if ($action) {
             $action->setGrid($this->grid);
             $action->setPersonalInventory($this->personalInventory);
-            $action->execute();
-            return;
+            if ($message = $action->execute()) {
+                $this->response->addMessage($message);
+            }
+            return $this->response;
         }
-        echo 'you cannot do that';
+        $this->response->addMessage('you cannot do that');
+        return $this->response;
     }
 
     /**

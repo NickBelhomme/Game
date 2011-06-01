@@ -12,6 +12,6 @@ class RustyNail extends Take
 
     protected function getExecutedMessageFailed()
     {
-        echo 'You already have the nail';
+        return 'You already have the nail';
     }
 }

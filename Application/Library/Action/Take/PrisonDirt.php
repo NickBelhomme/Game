@@ -5,6 +5,6 @@ class PrisonDirt extends Take
 {
     protected function getExecutedMessageFailed()
     {
-        echo 'Ouchoum, dirt makes me sneeze. Better leave that alone.';
+        return 'Ouchoum, dirt makes me sneeze. Better leave that alone.';
     }
 }
