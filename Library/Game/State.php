@@ -11,15 +11,26 @@ class State
 
     public function load()
     {
-        if (! array_key_exists($this->sessionName, $_SESSION)) {
-            return false;
-        } else {
+        if ($this->isStored()) {
             return unserialize($_SESSION[$this->sessionName]);
         }
+        return false;
     }
 
     public function save($container)
     {
-        $_SESSION['savedGame'] = serialize($container);
+        $_SESSION[$this->sessionName] = serialize($container);
+    }
+
+    public function reset()
+    {
+        if ($this->isStored()) {
+            unset($_SESSION[$this->sessionName]);
+        }
+    }
+
+    protected function isStored()
+    {
+        return array_key_exists($this->sessionName, $_SESSION);
     }
 }

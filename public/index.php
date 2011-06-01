@@ -6,17 +6,8 @@ require_once '../Application/AutoLoader.php';
 $autoLoader = new AutoLoader(realpath(__DIR__.'/../'));
 $autoLoader->registerNamespaces();
 
-if (!empty($_GET['cmd'])) {
-    if ($_GET['cmd'] == 'reset') {
-        session_start();
-        session_destroy();
-        header('Location: index.php');
-    }
-}
 $bootstrap = new \App\Bootstrap();
 $bootstrap->run();
-
-
 ?>
 
 <form method="get">

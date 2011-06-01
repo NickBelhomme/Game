@@ -10,6 +10,10 @@ class Bootstrap
     {
         $this->request = $this->createRequest();
         $this->state = new \Game\State();
+        if ($this->request->getCmd() == 'reset') {
+            $this->state->reset();
+            $this->request->setCmd('');
+        }
         if (!$container = $this->state->load()) {
             $container = new \Game\Container();
             $container->offsetSet('grid', $this->createGrid());
