@@ -95,7 +95,8 @@ class CommandParser
      * Constructor
      * Will setup the entire parser and run it automatically
      *
-     * @param string $input
+     * @param Game\Request $request
+     * @param Game\Response $response
      * @param Game\Grid $grid
      * @param Game\Inventory $personalInventory
      * @return void
